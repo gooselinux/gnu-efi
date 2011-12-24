@@ -1,0 +1,25 @@
+diff --git a/gnuefi/elf_ia32_efi.lds b/gnuefi/elf_ia32_efi.lds
+index bc29799..b15b36d 100644
+--- a/gnuefi/elf_ia32_efi.lds
++++ b/gnuefi/elf_ia32_efi.lds
+@@ -58,5 +58,7 @@ SECTIONS
+   {
+     *(.rel.reloc)
+     *(.eh_frame)
++    *(.note.GNU-stack)
+   }
++  .comment 0 : { *(.comment) }
+ }
+diff --git a/gnuefi/elf_x86_64_efi.lds b/gnuefi/elf_x86_64_efi.lds
+index 9c0a9f8..d0ae5f0 100644
+--- a/gnuefi/elf_x86_64_efi.lds
++++ b/gnuefi/elf_x86_64_efi.lds
+@@ -54,5 +54,8 @@ SECTIONS
+   .ignored.reloc :
+   {
+     *(.rela.reloc)
++    *(.eh_frame)
++    *(.note.GNU-stack)
+   }
++  .comment 0 : { *(.comment) }
+ }
